@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="wrapper flex flex-col justify-center items-center w-screen bg-slate-400 h-screen p-5">
+        <div class="location-request text-white font-thin mb-2 text-center w-[310px] xsm:w-[384px] sm:w-[631px]
+             bg-highlight border-b-4 border-b-rose-600 scale-0 transition-all duration-1000"></div>
+        <div class="parent">
+            <div class="app-heading text-highlight text-center text-3xl font-thin mb-2">Weather App</div>
+            <div class="dashboard flex flex-col rounded-xl bg-overview sm:flex-row ">
+                <div class="overview-panel rounded-xl p-5 text-white">
+
+                    <div class="search flex justify-between gap-2">
+                        <input class=" w-[250px] xsm:w-[320px] sm:w-[180px]
+                        bg-transparent ml-1 pb-1 outline-none border-b border-b-slate-400
+                        hover:border-b-white focus:border-b-white transition-all duration-200" 
+                        type="text" placeholder="Search for places" id="place" for="place" name="place">
+                        <div class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    </div>
+
+                    <div class="err-img hidden">
+                        <img src="./images/error.svg" alt="An image depicting an error.">
+                    </div>
+
+                    <div class="weather-img flex justify-center items-center my-2">
+                        <div class="w-32 h-32 flex items-center justify-center">
+                            <div class="img-load grid grid-cols-3 gap-1 w-[110px] animate-pulse">
+                                <div class="h-2 bg-slate-700 rounded col-span-2"></div>
+                                <div class="h-2 bg-slate-700 rounded col-span-1"></div>
+                                <div class="h-2 bg-slate-700 rounded col-span-1"></div>
+                                <div class="h-2 bg-slate-700 rounded col-span-2"></div>
+                                <div class="h-2 bg-slate-700 rounded col-span-3"></div>
+                            </div>
+                            <img class="weather-vector hidden" src="" alt="">
+                        </div>
+                    </div>
+
+                    <div class="weather-detail-load">
+                        <div class="w-[100px] h-4 bg-slate-700 rounded animate-pulse m-2"></div>
+                        <div class="w-[100px] h-4 bg-slate-700 rounded animate-pulse m-2"></div>
+                        <div class="w-[100px] h-4 bg-slate-700 rounded animate-pulse m-2"></div>
+                        <div class="w-[100px] h-4 bg-slate-700 rounded animate-pulse m-2"></div>
+                        <div class="w-[100px] h-4 bg-slate-700 rounded animate-pulse m-2"></div>
+                        <div class="w-[100px] h-4 bg-slate-700 rounded animate-pulse m-2"></div>
+                    </div>
+                    <div class="weather-detail hidden">
+                        <div class="temperature text-4xl"></div>
+                        <div class="day-time font-thin text-slate-400"></div>
+                        <div class="date font-thin text-slate-400"></div>
+                        <div class="weather-opinion"></div>
+                        <div class="rain-snow"></div>
+                        <div class="location flex gap-1 items-center"></div>
+                    </div>
+                </div>
+
+                <div class="highlights-panel rounded-xl bg-highlight p-5 w-[318px] xsm:w-[387px] sm:w-96">
+                    <div class="err-detail hidden text-white">
+                        <div class="font-black text-4xl">Error</div>
+                        <div class="err-code font-black text-4xl">404</div>
+                        <div class="err-msg font-thin text-xl capitalize">Page Not Found.</div>
+                        <div class="suggestion font-thin text-xl hidden">Try searching for a different city.</div>
+                    </div>
+                    <h3 class="highlight-heading font-semibold text-white mb-2">Today's Highlights</h3>
+                    <div class="today-highlights text-white flex flex-col gap-3">
+                        <div class="flex justify-between border-b border-b-slate-500 p-1" id="pressure">
+                            <div class="heading font-thin text-slate-400 text-sm">Pressure</div>
+                            <div class="metric-load w-[100px] h-4 bg-slate-700 rounded animate-pulse"></div>
+                            <div class="pressure-val hidden"></div>
+                        </div>
+                        <div class="flex justify-between border-b border-b-slate-500 p-1" id="wind">
+                            <div class="heading font-thin text-slate-400 text-sm">Wind Status</div>
+                            <div class="metric-load w-[100px] h-4 bg-slate-700 rounded animate-pulse"></div>
+                            <div class="wind-speed-val hidden"></div>
+                        </div>
+                        <div class="flex justify-between border-b border-b-slate-500 p-1" id="sunrise">
+                            <div class="heading font-thin text-slate-400 text-sm">Sunrise</div>
+                            <div class="metric-load w-[100px] h-4 bg-slate-700 rounded animate-pulse"></div>
+                            <div class="sunrise-time hidden"></div>
+                        </div>
+                        <div class="flex justify-between border-b border-b-slate-500 p-1" id="sunset">
+                            <div class="heading font-thin text-slate-400 text-sm">Sunset</div>
+                            <div class="metric-load w-[100px] h-4 bg-slate-700 rounded animate-pulse"></div>
+                            <div class="sunset-time hidden"></div>
+                        </div>
+                        <div class="flex justify-between border-b border-b-slate-500 p-1" id="humidity">
+                            <div class="heading font-thin text-slate-400 text-sm">Humidity</div>
+                            <div class="metric-load w-[100px] h-4 bg-slate-700 rounded animate-pulse"></div>
+                            <div class="humidity-val hidden"></div>
+                        </div>
+                        <div class="flex justify-between border-b border-b-slate-500 p-1" id="visibilty">
+                            <div class="heading font-thin text-slate-400 text-sm">Visibility</div>
+                            <div class="metric-load w-[100px] h-4 bg-slate-700 rounded animate-pulse"></div>
+                            <div class="visibility-val hidden"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="text-sm">Developed with <i class="fa-solid fa-heart text-overview"></i> by 
+            <a class="text-overview underline decoration-dotted font-medium" href="https://github.com/yuvrajdev1920">Yuvraj Pratap Singh</a>.</footer>
+    </div>
+
+    <script src="https://kit.fontawesome.com/2a86404475.js" crossorigin="anonymous"></script>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
