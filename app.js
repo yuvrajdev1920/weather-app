@@ -225,7 +225,7 @@ async function getWeather(city,userLat,userLong){
       weatherVector.setAttribute("alt","A vector image depicting Snowy weather.");
     }
     else if(weatherId>=701 && weatherId<=781){
-      weatherVector.setAttribute("src","./assets/fog.svg");
+      weatherVector.setAttribute("src","./images/fog.svg");
       weatherVector.setAttribute("alt","A vector image depicting haze or a fog.");
     }
     else if(weatherId==800){
