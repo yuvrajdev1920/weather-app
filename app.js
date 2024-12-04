@@ -209,37 +209,37 @@ async function getWeather(city,userLat,userLong){
 
     // setting weather vector
     if(weatherId>=200 && weatherId<=232){
-      weatherVector.setAttribute("src","./images/Thunderstorm.svg");
+      weatherVector.setAttribute("src","https://res.cloudinary.com/dlmt80zvq/image/upload/v1733320805/weather_app/thunderstorm.svg");
       weatherVector.setAttribute("alt","A vector image depicting a thunderstorm.");
     }
     else if(weatherId>=300 && weatherId<=321){
-      weatherVector.setAttribute("src","./images/Drizzle.svg");
+      weatherVector.setAttribute("src","https://res.cloudinary.com/dlmt80zvq/image/upload/v1733320803/weather_app/drizzle.svg");
       weatherVector.setAttribute("alt","A vector image depicting a drizzle.");
     }
     else if(weatherId>=500 && weatherId<=531){
-      weatherVector.setAttribute("src","./images/Rain.svg");
+      weatherVector.setAttribute("src","https://res.cloudinary.com/dlmt80zvq/image/upload/v1733320805/weather_app/rain.svg");
       weatherVector.setAttribute("alt","A vector image depicting Rainy weather.");
     }
     else if(weatherId>=600 && weatherId<=622){
-      weatherVector.setAttribute("src","./images/Snow.svg");
+      weatherVector.setAttribute("src","https://res.cloudinary.com/dlmt80zvq/image/upload/v1733320804/weather_app/snow.svg");
       weatherVector.setAttribute("alt","A vector image depicting Snowy weather.");
     }
     else if(weatherId>=701 && weatherId<=781){
-      weatherVector.setAttribute("src","./images/fog.svg");
+      weatherVector.setAttribute("src","https://res.cloudinary.com/dlmt80zvq/image/upload/v1733320803/weather_app/cloudy.svg");
       weatherVector.setAttribute("alt","A vector image depicting haze or a fog.");
     }
     else if(weatherId==800){
       if(dayNight=='d'){
-        weatherVector.setAttribute("src","./images/Sunny.svg");
+        weatherVector.setAttribute("src","https://res.cloudinary.com/dlmt80zvq/image/upload/v1733320804/weather_app/sunny.svg");
         weatherVector.setAttribute("alt","A vector image depicting a Sunny weather.");
       }
       else{
-        weatherVector.setAttribute("src","./images/Clear Night.svg");
+        weatherVector.setAttribute("src","https://res.cloudinary.com/dlmt80zvq/image/upload/v1733320803/weather_app/clearnight.svg");
         weatherVector.setAttribute("alt","A vector image depicting a clear night sky.");
       }
     }
     else if(weatherId>=801){
-      weatherVector.setAttribute("src","./images/Cloudy.svg");
+      weatherVector.setAttribute("src","https://res.cloudinary.com/dlmt80zvq/image/upload/v1733320803/weather_app/cloudy.svg");
       weatherVector.setAttribute("alt","A vector image depicting a cloudy weather.");
     }
   }
